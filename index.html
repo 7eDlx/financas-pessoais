@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Controle Financeiro Mensal</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Finanças Pessoais</h1>
+            <p>Controle mensal de receitas e despesas</p>
+        </header>
+
+        <form id="form-transacao">
+            <div class="input-group">
+                <input type="text" id="descricao" placeholder="Descrição" required />
+                <input type="number" id="valor" placeholder="Valor (R$)" required />
+                <input type="date" id="data" required />
+                <select id="tipo" required>
+                    <option value="">Tipo</option>
+                    <option value="receita">Receita</option>
+                    <option value="despesa_fixa">Despesa Fixa</option>
+                    <option value="despesa_variavel">Despesa Variável</option>
+                    <option value="investimento">Investimento</option>
+                </select>
+                <select id="mes">
+                    <option value="Janeiro">Janeiro</option>
+                    <option value="Fevereiro">Fevereiro</option>
+                    <option value="Março">Março</option>
+                    <option value="Abril">Abril</option>
+                    <option value="Maio">Maio</option>
+                    <option value="Junho">Junho</option>
+                    <option value="Julho">Julho</option>
+                    <option value="Agosto">Agosto</option>
+                    <option value="Setembro">Setembro</option>
+                    <option value="Outubro">Outubro</option>
+                    <option value="Novembro">Novembro</option>
+                    <option value="Dezembro">Dezembro</option>
+                </select>
+                <button type="submit">Adicionar</button>
+            </div>
+        </form>
+
+        <div class="resumo">
+            <h2>Fechamento Mensal: <span id="mes-atual">Janeiro</span></h2>
+            <p><strong>Saldo:</strong> R$ <span id="saldo">0.00</span></p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Valor (R$)</th>
+                    <th>Tipo</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="lista-transacoes"></tbody>
+        </table>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
